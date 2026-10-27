@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 const ENTRIES = [
   { to: "/materials/" as const, n: "01", title: "Course Materials", desc: "Wochenübersicht aller Übungsstunden, Themen und Aufgaben." },
   { to: "/lab/" as const, n: "02", title: "Algorithm Simulator", desc: "Interaktive Visualisierungen — Schritt für Schritt." },
-  { to: "/lab/" as const, n: "03", title: "CodeExpert", desc: "How to master DP and reach Flow-State" },
+  { to: "/codeexpert/" as const, n: "03", title: "CodeExpert", desc: "How to master DP and reach Flow-State" },
   { to: "/lab/" as const, n: "04", title: "Extras", desc: "Contacts, wisdom, etc." },
 ];
 
@@ -37,7 +37,7 @@ function Home() {
         </h1>
         <div className="mt-12 grid border-t border-foreground md:grid-cols-2">
           {ENTRIES.map((e, i) => (
-            <Link key={e.to} to={e.to}
+            <Link key={e.n} to={e.to}
               className={`group flex flex-col justify-between gap-8 border-b border-border p-8 transition-colors hover:bg-primary hover:text-primary-foreground md:min-h-[220px] ${i === 0 ? "md:border-r" : ""}`}>
               <span className="font-mono text-sm tracking-normal">[{e.n} // {e.title.toUpperCase()}]</span>
               <div>

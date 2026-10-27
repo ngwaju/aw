@@ -116,3 +116,13 @@
   .simulation-title { align-items: flex-start; flex-direction: column; }
   .simulation-controls label { width: 100%; margin-top: 8px; }
 }
+.ce-wrap { display: flex; flex-direction: column; min-height: 0; }
+.ce-grid { display: grid; gap: 0; border-bottom: 1px solid var(--foreground); }
+.ce-col { padding: 16px 0; min-width: 0; border-bottom: 1px solid var(--border); }
+@media (min-width: 1024px) {
+  .ce-wrap { flex: 1; }
+  .ce-grid { flex: 1; min-height: 0; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.25fr) minmax(0, 1fr); }
+  .ce-col { overflow-y: auto; padding: 16px; border-bottom: 0; border-right: 1px solid var(--border); }
+  .ce-col:first-child { padding-left: 0; }
+  .ce-col:last-child { border-right: 0; padding-right: 0; }
+}

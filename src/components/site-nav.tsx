@@ -31,6 +31,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
             <Link to="/" className={navCls} activeOptions={{ exact: true }}>Home</Link>
             <Link to="/materials/" className={navCls} activeProps={{ className: "text-primary underline underline-offset-8" }}>Materials</Link>
             <Link to="/lab/" className={navCls} activeProps={{ className: "text-primary underline underline-offset-8" }}>Lab</Link>
+            <Link to="/codeexpert/" className={navCls} activeProps={{ className: "text-primary underline underline-offset-8" }}>CodeExpert</Link>
           </nav>
         </div>
       </header>

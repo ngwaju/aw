@@ -21,6 +21,6 @@ export default defineConfig({
     // (GitHub Pages) serves each page directly. Trailing slashes match the
     // router's trailingSlash: "always" setting in src/router.tsx.
     prerender: { enabled: true },
-    pages: [{ path: "/" }, { path: "/materials/" }, { path: "/lab/" }],
+    pages: [{ path: "/" }, { path: "/materials/" }, { path: "/lab/" }, { path: "/codeexpert/" }],
   },
 });
