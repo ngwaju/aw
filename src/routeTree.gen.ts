@@ -10,12 +10,18 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CodeexpertRouteImport } from './routes/codeexpert'
 import { Route as LabRouteImport } from './routes/lab'
 import { Route as MaterialsRouteImport } from './routes/materials'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CodeexpertRoute = CodeexpertRouteImport.update({
+  id: '/codeexpert',
+  path: '/codeexpert',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LabRoute = LabRouteImport.update({
@@ -31,30 +37,34 @@ const MaterialsRoute = MaterialsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/codeexpert': typeof CodeexpertRoute
   '/lab': typeof LabRoute
   '/materials': typeof MaterialsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/codeexpert': typeof CodeexpertRoute
   '/lab': typeof LabRoute
   '/materials': typeof MaterialsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/codeexpert': typeof CodeexpertRoute
   '/lab': typeof LabRoute
   '/materials': typeof MaterialsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/lab' | '/materials'
+  fullPaths: '/' | '/codeexpert' | '/lab' | '/materials'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/lab' | '/materials'
-  id: '__root__' | '/' | '/lab' | '/materials'
+  to: '/' | '/codeexpert' | '/lab' | '/materials'
+  id: '__root__' | '/' | '/codeexpert' | '/lab' | '/materials'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CodeexpertRoute: typeof CodeexpertRoute
   LabRoute: typeof LabRoute
   MaterialsRoute: typeof MaterialsRoute
 }
@@ -66,6 +76,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/codeexpert': {
+      id: '/codeexpert'
+      path: '/codeexpert'
+      fullPath: '/codeexpert'
+      preLoaderRoute: typeof CodeexpertRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/lab': {
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CodeexpertRoute: CodeexpertRoute,
   LabRoute: LabRoute,
   MaterialsRoute: MaterialsRoute,
 }
