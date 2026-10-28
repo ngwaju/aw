@@ -19,7 +19,7 @@ const ENTRIES = [
   { to: "/materials/" as const, n: "01", title: "Course Materials", desc: "Wochenübersicht aller Übungsstunden, Themen und Aufgaben." },
   { to: "/lab/" as const, n: "02", title: "Algorithm Simulator", desc: "Interaktive Visualisierungen — Schritt für Schritt." },
   { to: "/codeexpert/" as const, n: "03", title: "CodeExpert", desc: "How to master DP and Flows" },
-  { to: "/lab/" as const, n: "04", title: "Extras", desc: "Contacts, etc." },
+  { to: "/lab/" as const, n: "04", title: "Extras", desc: "Kontakt, etc." },
 ];
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
       <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col justify-center px-6 py-16">
         <p className="font-mono text-xs uppercase tracking-normal text-muted-foreground">Algorithmen &amp; Wahrscheinlichkeiten · FS 2027</p>
         <h1 className="mt-6 text-4xl font-extrabold leading-[0.95] tracking-normal md:text-7xl">
-          A<span className="text-primary"> &amp;</span>W<br />
+          A<span className="text-primary">&amp;</span>W<br />
         </h1>
         <div className="mt-12 grid border-t border-foreground md:grid-cols-2">
           {ENTRIES.map((e, i) => (
