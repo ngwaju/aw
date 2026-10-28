@@ -1,6 +1,7 @@
 // @ts-nocheck -- dense index math (same convention as course.tsx); behaviour covered by src/test/codeexpert.test.ts
 import { useMemo, useState, type ReactNode } from "react";
 import { Check, Copy } from "lucide-react";
+import { DpMasterclass } from "./dp-masterclass";
 
 /* ---------- Pure logic (tested) ---------- */
 
@@ -387,12 +388,13 @@ function HarvestTab() {
 }
 
 const TABS = [
+  { id: "theory", n: "T0", label: "Probability DP", sub: "Masterclass" },
   { id: "frog", n: "T1", label: "Probability DP", sub: "Frog Feeding" },
   { id: "harvest", n: "T2", label: "Network Flows & Reductions", sub: "The Great Harvest" },
 ] as const;
 
 export function CodeExpert() {
-  const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("frog");
+  const [tab, setTab] = useState<(typeof TABS)[number]["id"]>("theory");
   return (
     <div className="ce-wrap">
       <div role="tablist" aria-label="Aufgaben" className="flex border-y border-foreground">
@@ -404,7 +406,7 @@ export function CodeExpert() {
           </button>
         ))}
       </div>
-      {tab === "frog" ? <FrogTab /> : <HarvestTab />}
+      {tab === "theory" ? <DpMasterclass /> : tab === "frog" ? <FrogTab /> : <HarvestTab />}
     </div>
   );
 }
