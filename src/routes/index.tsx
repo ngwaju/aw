@@ -4,7 +4,7 @@ import { Brand, MetaBadges } from "@/components/site-nav";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "A&W @ju " },
+      { title: "A&W" },
       { name: "description", content: "TA-Seite von Junior Ngwa für Algorithmen & Wahrscheinlichkeiten: Kursmaterialien und interaktiver Algorithm Simulator." },
       { property: "og:title", content: "A&W" },
       { property: "og:description", content: "Kursmaterialien und interaktiver Algorithm Simulator für A&W." },
